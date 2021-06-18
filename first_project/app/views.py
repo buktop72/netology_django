@@ -35,4 +35,5 @@ def workdir_view(request):
     # директории
     # raise NotImplemented
     ls_dir = os.listdir(path='.')
+    ls_dir.sort()
     return HttpResponse('<br>'.join(ls_dir))
