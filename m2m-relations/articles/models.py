@@ -18,10 +18,6 @@ class Article(models.Model):  # основная таблица - Статьи
         return self.title
 
 
-
-#####
-
-
 class Tag(models.Model):  # таблица - Разделы (тэги)
 
     topic = models.CharField(max_length=128, verbose_name='Раздел')
@@ -43,4 +39,4 @@ class Relationship(models.Model):   # Промежуточная таблица 
     is_main = models.BooleanField(verbose_name="Основной раздел", default=False)  # метка основного раздела
 
     def __str__(self):
-        return f"{self.title} | {self.topic} | {self.is_main}"
+        return f"{self.title} - {self.topic} - {self.is_main}"
