@@ -1,42 +1,41 @@
 from django.db import models
 
 
-class Article(models.Model):  # основная таблица - Статьи
+class Article(models.Model):  # основная таблица
+	title = models.CharField(max_length=256, verbose_name='Название')
+	text = models.TextField(verbose_name='Текст')
+	published_at = models.DateTimeField(verbose_name='Дата публикации')
+	image = models.ImageField(null=True, blank=True, verbose_name='Изображение', )
 
-    title = models.CharField(max_length=256, verbose_name='Название')
-    text = models.TextField(verbose_name='Текст')
-    published_at = models.DateTimeField(verbose_name='Дата публикации')
-    image = models.ImageField(null=True, blank=True, verbose_name='Изображение',)
-    tags = models.ManyToManyField('Tag', related_name='tags', through='Relationship')  # связь m2m
+	class Meta:
+		verbose_name = 'Статья'
+		verbose_name_plural = 'Статьи'
 
-    class Meta:  # упорядочивание моделей
-        verbose_name = 'Статья'
-        verbose_name_plural = 'Статьи'
-        ordering = ['-published_at']
-
-    def __str__(self):
-        return self.title
+	def __str__(self):
+		return self.title
 
 
-class Tag(models.Model):  # таблица - Разделы (тэги)
+class Scope(models.Model):  # таблица тэгов
+	theme = models.TextField(verbose_name='Категория', unique=True)
+	articles = models.ManyToManyField(Article, blank=True, related_name='scopes', through='ArticleScope')
 
-    topic = models.CharField(max_length=128, verbose_name='Раздел')
+	def __str__(self):
+		return self.theme
 
-    class Meta:
-        verbose_name = 'Раздел'
-        verbose_name_plural = 'Разделы'
-
-    def __str__(self):
-        return self.topic
+	class Meta:
+		verbose_name = 'Тема'
+		verbose_name_plural = 'Темы'
 
 
-class Relationship(models.Model):   # Промежуточная таблица  Статьи-Разделы
+class ArticleScope(models.Model):  # промежуточная таблица
+	article = models.ForeignKey(Article, related_name='article_theme', on_delete=models.CASCADE)
+	theme = models.ForeignKey(Scope, verbose_name='Раздел', related_name='theme_article', on_delete=models.CASCADE)
+	main = models.BooleanField(verbose_name='Основной', default=False)
 
-    title = models.ForeignKey(Article, related_name='scopes', verbose_name="Статья", on_delete=models.CASCADE)
-    topic = models.ForeignKey(
-        Tag, related_name='scopes', verbose_name="Тематики статьи", default=False, on_delete=models.CASCADE
-    )
-    is_main = models.BooleanField(verbose_name="Основной раздел", default=False)  # метка основного раздела
+	def __str__(self):
+		return f'{self.article} - {self.theme} - {self.main}'
 
-    def __str__(self):
-        return f"{self.title} - {self.topic} - {self.is_main}"
+	class Meta:
+		verbose_name = 'Тема статьи'
+		verbose_name_plural = 'Темы статей'
+		ordering = ['-main', 'theme__theme']  # сортировка
