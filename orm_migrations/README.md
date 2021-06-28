@@ -11,15 +11,8 @@
 Это решит проблемы текущей архитектуры.
 
 Задача:
-
-1. Поменять отношения моделей `Student` и `Teacher` с `Foreign key` на `Many to many`
-2. Поправить шаблон списка учеников с учетом изменения моделей
-
-## Примечание
-
-Сначала примените текущую миграцию, затем загрузите исходные данные с помощью `loaddata` и после этого меняйте модели и делайте новые миграции.
-
-В противном случае `loaddata` не сможет загрузить данные на новую схемы и данные придется заносить вручную.
+1) Поменять отношения моделей `Student` и `Teacher` с `Foreign key` на `Many to many`
+2) Поправить шаблон списка учеников с учетом изменения моделей
 
 ## Подсказки
 
@@ -30,10 +23,12 @@
 В шаблоне, для отображения всех учителей ученика, можно использовать вложенный цикл:
 
 ```html
-{% for teacher in student.teachers.all %}
-<p>{{ teacher.name }}: {{ teacher.subject }}</p>
+{% for obj_teacher in object.teachers.all %}
+    <p>{{ obj_teacher.name }}</p>
+    ...
 {% endfor %}
 ```
+
 
 Более подробно примеры как работать с `ManyToManyField` можно посмотреть в документации Django.
 https://docs.djangoproject.com/en/dev/ref/contrib/admin/#working-with-many-to-many-models
@@ -41,6 +36,7 @@ https://docs.djangoproject.com/en/dev/ref/contrib/admin/#working-with-many-to-ma
 ## Дополнительное задание
 
 Проанализируйте число sql-запросов (напоминание: для этого можно использовать `django-debug-toolbar`) Для каждого студента будет выполняться отдельный запрос. Это не очень производительное решение - улучшите его с помощью `prefetch_related`.
+
 
 ## Документация по проекту
 
@@ -51,6 +47,7 @@ https://docs.djangoproject.com/en/dev/ref/contrib/admin/#working-with-many-to-ma
 ```bash
 pip install -r requirements.txt
 ```
+
 
 Провести миграцию:
 
@@ -63,6 +60,7 @@ python manage.py migrate
 ```bash
 python manage.py loaddata school.json
 ```
+
 
 Запустить отладочный веб-сервер проекта:
 
