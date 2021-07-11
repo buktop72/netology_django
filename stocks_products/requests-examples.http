@@ -2,7 +2,7 @@
 
 @baseUrl = http://localhost:8000/api/v1
 
-# создание продукта
+# создание продукта+
 POST {{baseUrl}}/products/
 Content-Type: application/json
 
@@ -13,13 +13,13 @@ Content-Type: application/json
 
 ###
 
-# получение продуктов
+# получение продуктов+
 GET {{baseUrl}}/products/
 Content-Type: application/json
 
 ###
 
-# обновление продукта
+# обновление продукта+
 PATCH {{baseUrl}}/products/1/
 Content-Type: application/json
 
@@ -29,7 +29,7 @@ Content-Type: application/json
 
 ###
 
-# удаление продукта
+# удаление продукта+
 DELETE {{baseUrl}}/products/1/
 Content-Type: application/json
 
@@ -41,7 +41,7 @@ Content-Type: application/json
 
 ###
 
-# создание склада
+# создание склада+
 POST {{baseUrl}}/stocks/
 Content-Type: application/json
 
@@ -49,7 +49,7 @@ Content-Type: application/json
   "address": "мой адрес не дом и не улица, мой адрес сегодня такой: www.ленинград-спб.ru3",
   "positions": [
     {
-      "product": 2,
+      "product": 1,
       "quantity": 250,
       "price": 120.50
     },
@@ -63,14 +63,14 @@ Content-Type: application/json
 
 ###
 
-# обновляем записи на складе
+# обновляем записи на складе+
 PATCH {{baseUrl}}/stocks/4/
 Content-Type: application/json
 
 {
   "positions": [
     {
-      "product": 2,
+      "product": 1,
       "quantity": 100,
       "price": 130.80
     },

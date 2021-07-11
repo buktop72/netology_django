@@ -56,3 +56,5 @@ class StockProduct(models.Model):
     class Meta:  # отображение моделей в админке
         verbose_name = 'Продукты на складе'
         verbose_name_plural = 'Продукты на складах'
+
+    # objects = models.Manager()  # явным образом указываем диспетчер моделей по умолчанию, ошибка: unresolved attribute references 'object'

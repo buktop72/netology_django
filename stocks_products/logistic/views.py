@@ -8,8 +8,6 @@ class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
-    def post(self, *args, **kwargs):
-        return super().post(*args, **kwargs)
     # при необходимости добавьте параметры фильтрации
 
 

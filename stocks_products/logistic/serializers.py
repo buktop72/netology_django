@@ -14,13 +14,16 @@ class ProductPositionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = StockProduct
-        fields = '__all__'
+        fields = ['product', 'quantity', 'price']
 
 
 class StockSerializer(serializers.ModelSerializer):
     positions = ProductPositionSerializer(many=True)
 
     # настройте сериализатор для склада
+    class Meta:
+        model = Stock
+        fields = ['address', 'positions']
 
     def create(self, validated_data):
         # достаем связанные данные для других таблиц
@@ -32,7 +35,8 @@ class StockSerializer(serializers.ModelSerializer):
         # здесь вам надо заполнить связанные таблицы
         # в нашем случае: таблицу StockProduct
         # с помощью списка positions
-
+        for item in positions:
+            StockProduct.objects.update_or_create(stock=stock, **item)
         return stock
 
     def update(self, instance, validated_data):
@@ -46,8 +50,14 @@ class StockSerializer(serializers.ModelSerializer):
         # в нашем случае: таблицу StockProduct
         # с помощью списка positions
 
+        positions_to_remove = {position.id: position for position in stock.positions.all()}
+        for item in positions:
+            position_, created_ = StockProduct.objects.update_or_create(stock=stock, **item)
+            if not created_:
+                positions_to_remove.pop(position_.id)
+        for position_ in positions_to_remove.values():
+            position_.delete()
+
         return stock
 
-    class Meta:
-        model = Stock
-        fields = '__all__'
+
