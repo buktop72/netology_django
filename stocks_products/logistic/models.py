@@ -7,7 +7,7 @@ class Product(models.Model):
     description = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return f'{self.title} - {self.description}'
+        return f'{self.id} - {self.title} - {self.description}'
 
     class Meta:  # отображение моделей в админке
         verbose_name = 'Продукт'
@@ -15,6 +15,7 @@ class Product(models.Model):
 
 
 class Stock(models.Model):
+
     address = models.CharField(max_length=200, unique=True)
     products = models.ManyToManyField(
         Product,
@@ -23,13 +24,15 @@ class Stock(models.Model):
     )
 
     def __str__(self):
-        return f'{self.address} - {self.products}'
+        return f'{self.id} - {self.address}'
 
     class Meta:  # отображение моделей в админке
         verbose_name = 'Склад'
         verbose_name_plural = 'Склады'
 
+
 class StockProduct(models.Model):
+
     stock = models.ForeignKey(
         Stock,
         on_delete=models.CASCADE,
@@ -44,10 +47,11 @@ class StockProduct(models.Model):
     price = models.DecimalField(
         max_digits=18,
         decimal_places=2,
-        validators=[MinValueValidator(0)],
+        validators=[MinValueValidator(0)],  # Валидация, цена всегда положительная
     )
+
     def __str__(self):
-        return f'{self.stock} - {self.product} - {self.quantity} - {self.price}'
+        return f'{self.stock} - {self.product} - {self.quantity} кг. - {self.price} руб.'
 
     class Meta:  # отображение моделей в админке
         verbose_name = 'Продукты на складе'
