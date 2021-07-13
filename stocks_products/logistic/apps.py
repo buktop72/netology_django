@@ -4,4 +4,4 @@ from django.apps import AppConfig
 class LogisticConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'logistic'
-    verbose_name = 'Логистика'
+    verbose_name = 'Приложение - Логистика'
