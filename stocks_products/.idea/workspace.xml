@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1d0be8cd-0ae1-40be-910f-1c872ddb8b55" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/logistic/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/logistic/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logistic/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/logistic/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logistic/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/logistic/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logistic/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/logistic/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requests-examples.http" beforeDir="false" afterPath="$PROJECT_DIR$/requests-examples.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stocks_products.db" beforeDir="false" afterPath="$PROJECT_DIR$/stocks_products.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stocks_products/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/stocks_products/settings.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1v6uDMw6K7szD8YtCWzFygLEtcu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/manage.py" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+  </component>
+  <component name="RunManager">
+    <configuration name="server" type="PythonConfigurationType" factoryName="Python">
+      <module name="stocks_products" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\viktor\PycharmProjects\netology_django\stocks_products\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d0be8cd-0ae1-40be-910f-1c872ddb8b55" name="Default Changelist" comment="" />
+      <created>1625894738857</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625894738857</updated>
+      <workItem from="1625894766135" duration="5219000" />
+      <workItem from="1625984838148" duration="11144000" />
+      <workItem from="1625999091661" duration="3182000" />
+      <workItem from="1626003184288" duration="8497000" />
+      <workItem from="1626017007420" duration="16000" />
+      <workItem from="1626017407540" duration="843000" />
+      <workItem from="1626092970720" duration="1285000" />
+      <workItem from="1626094275692" duration="8810000" />
+      <workItem from="1626184131070" duration="10477000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="312" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1625996735251">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="312" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1625996735251" />
+    <state x="638" y="188" key="FileChooserDialogImpl" timestamp="1625996706915">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="638" y="188" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1625996706915" />
+    <state width="1397" height="247" key="GridCell.Tab.0.bottom" timestamp="1626194893340">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="247" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1626194893340" />
+    <state width="1397" height="247" key="GridCell.Tab.0.center" timestamp="1626194893340">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="247" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1626194893340" />
+    <state width="1397" height="247" key="GridCell.Tab.0.left" timestamp="1626194893340">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="247" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1626194893340" />
+    <state width="1397" height="247" key="GridCell.Tab.0.right" timestamp="1626194893340">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="247" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1626194893340" />
+    <state width="1397" height="247" key="GridCell.Tab.1.bottom" timestamp="1626194893341">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="247" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1626194893341" />
+    <state width="1397" height="247" key="GridCell.Tab.1.center" timestamp="1626194893340">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="247" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1626194893340" />
+    <state width="1397" height="247" key="GridCell.Tab.1.left" timestamp="1626194893340">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="247" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1626194893340" />
+    <state width="1397" height="247" key="GridCell.Tab.1.right" timestamp="1626194893340">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="247" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1626194893340" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1625897386687">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1440.860@0.0.1440.860" timestamp="1625897386687" />
+    <state x="221" y="74" key="SettingsEditor" timestamp="1626094244657">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="221" y="74" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1626094244657" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/stocks_products$server.coverage" NAME="server Coverage Results" MODIFIED="1626192345110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
