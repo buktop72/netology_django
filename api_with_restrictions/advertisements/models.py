@@ -28,3 +28,10 @@ class Advertisement(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True
     )
+
+    def __str__(self):
+        return f'{self.title}  - {self.description}'
+
+    class Meta:  # отображение моделей в админке
+        verbose_name = 'Объявление'
+        verbose_name_plural = 'Объявления'
