@@ -30,5 +30,5 @@ class Course(models.Model):
         return f'{self.name}  - {self.students}'
 
     class Meta:  # отображение моделей в админке
-        verbose_name = 'Класс'
-        verbose_name_plural = 'Классы'
+        verbose_name = 'Курс'
+        verbose_name_plural = 'Курсы'
