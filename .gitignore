@@ -3,7 +3,7 @@
 .idea/
 
 # DB
-.db
+*.db
 
 # Vagrant
 .vagrant/
