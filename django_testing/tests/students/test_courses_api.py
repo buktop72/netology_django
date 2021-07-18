@@ -1,7 +1,7 @@
 import pytest
 from django.urls import reverse
 from rest_framework.status import HTTP_200_OK, HTTP_201_CREATED, HTTP_204_NO_CONTENT
-
+# from tests.conftest import course_factory, students_factory
 
 # 1 проверка получения 1го курса
 @pytest.mark.django_db
@@ -64,40 +64,43 @@ def test_course_create(api_client):
 
 # 6 тест успешного обновления курса
 @pytest.mark.django_db
-def test_course_update(api_client):
+def test_course_update(api_client, course_factory):
     # создание курса
-    course = {'name': 'test_course'}
-    url = reverse("courses-list")
-    response = api_client.post(url, data=course)
-    assert response.status_code == HTTP_201_CREATED
+    course = course_factory(name='test_course')
+    data_id = course.id  # получаем id созданного курса
 
     # проверяем, что курс создан
-    response_get = api_client.get(url, data={'name': f'{course["name"]}'})
-    response_get_json = response_get.json()
-    assert response_get_json[0]['name'] == course['name']
+    data = {'name': 'test_course'}
+    url = reverse("courses-list")
+    response = api_client.get(url, data=data)
+    assert response.status_code == HTTP_200_OK
 
     # обновляем
-    response_json = response.json()
-    url_upd = reverse("courses-detail", args=(response_json["id"], ))
-    course_update = {'name': 'test_course_update'}
-    resp_upd = api_client.patch(url_upd, data=course_update)
-    assert resp_upd.status_code == HTTP_200_OK
+    up_data = {'id': data_id, 'name': 'update_test_course'}
+    url_upd = reverse("courses-detail", args=(data_id,))
+    response_upd = api_client.patch(url_upd, data=up_data)
+    assert response_upd.status_code == HTTP_200_OK
 
-    # проверяем
-    resp_get = api_client.get(url, data={'name': f'{course_update["name"]}'})
-    resp_get_json = resp_get.json()
-    assert resp_get_json[0]['name'] == course_update['name']
+    # # проверяем что имя обновилось
+    response_get = api_client.get(url, data={'id': data_id})
+    response_get_json = response_get.json()
+    assert response_get_json[0]['name'] == 'update_test_course'
 
 
 # 7 тест успешного удаления курса
 @pytest.mark.django_db
-def test_curse_delete(api_client):
-    course = {'name': 'Test_course'}
+def test_curse_delete(api_client, course_factory):
+    # создание курса
+    course = course_factory(name='test_del_course')
+    data_id = course.id  # получаем id созданного курса
+
+    # проверяем, что курс создан
+    data = {'name': 'test_del_course'}
     url = reverse("courses-list")
-    resp = api_client.post(url, data=course)
-    url_get = reverse("courses-list")
-    api_client.get(url_get, data={'name': f'{course["name"]}'})
-    resp_json = resp.json()
-    url_to_del = reverse("courses-detail", args=(resp_json["id"], ))
-    resp_del = api_client.delete(url_to_del)
-    assert resp_del.status_code == HTTP_204_NO_CONTENT
+    response = api_client.get(url, data=data)
+    assert response.status_code == HTTP_200_OK
+
+    # Удаляем курс
+    url_del = reverse("courses-detail", args=(data_id,))
+    response_upd = api_client.delete(url_del, args=data_id,)
+    assert response_upd.status_code == HTTP_204_NO_CONTENT
